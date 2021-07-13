@@ -1,0 +1,104 @@
+/*RESET*/
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*DEFININDO A FONTE DA PÁGINA*/
+body
+{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/*CONFIGURANDO O CONTAINER QUE VAI TER OS DOIS CONTAINERES FILHOS TABELA-CONTAINER*/
+.grid-container
+{
+    display: grid;/*DEFININDO O GRID*/
+    margin-top:5%;/*AFASTANDO O CONTAINER DO TOPO DA TELA*/
+    grid-gap:50px;/*DANDO UM ESPAÇAMENTO DE 50px ENTRE OS DOIS CONTAINERES FILHOS TABELA-CONTAINER*/
+    justify-content:center;/*CENTRALIZANDO OS DOIS CONTAINERES FILHOS NO CENTRO HORIZONTAL DO CONTAINER MAIN*/
+}
+/* CONFIGURANDO OS CONTAINERES QUE VAI TER OS CARDS DA MANHÃ E DA TARDE*/
+.tabela-container
+{
+    display: grid;/*DEFININDO O GRID*/
+    grid-template-columns: repeat(6, 200px);/*DEFININDO A QUANTIDADE DE COLUNAS O GRID TERÁ, NO CASO TERÁ 6 COLUNAS COM WIDTH DE 200px E HEIGHT DE 200px*/
+    grid-template-rows: repeat(1, 200px);/*DEFININDO A QUANTIDADE DE LINHAS QUE O GRID TERÁ, NO CASO TERÁ 1 LINHA COM 200px DE HEIGHT e 200px DE WIDTH*/
+    grid-gap:15px;/*DANDO UM ESPAÇAMENTO DE 15px ENTRE TODOS OS ITEMS*/
+    grid-template-areas: 
+    "area0 area1 area2 area3 area4 area5";/*AQUI ESTOU POSICIONANDO ONDE CADA ITEM VAI FICAR DENTRO DO GRID*/
+}
+
+/*DECLARANDO QUAL A POSIÇÃO DE CADA ITEM DENTRO DO GRID*/
+.grid-item0
+{
+    grid-area: area0;
+}
+.grid-item1
+{
+    grid-area: area1;
+}
+.grid-item2
+{
+    grid-area: area2;
+}
+.grid-item3
+{
+    grid-area: area3;
+}
+.grid-item4
+{
+    grid-area: area4;
+}
+.grid-item5
+{
+    grid-area: area5;
+}
+/* ESTILIZANDO TODOS OS ITENS DENTRO DO GRID*/
+.grid-item0,
+.grid-item1,
+.grid-item2,
+.grid-item3,
+.grid-item4,
+.grid-item5
+{
+    padding-top:5px;/*DANDO UM PADDING DE 5px PARA QUE O CONTEUDO DE CADA ITEM FIQUE MAIS CENTRALIZADO VERTICALMENTE*/
+    text-align: center;/*CENTRALIZANDO TODO O CONTEUDO DO ITEM*/
+    background-color: #2C2A4A;/*DANDO COR PARA O FUNDO*/
+    border-radius:10px;/*DEFININDO QUINAS ARREDONDADAS*/
+    color: white;/*DEFININDO A COR DOS TEXTOS PARA BRANCO*/
+
+}
+/*ESTILIZANDO TODOS OS ITENS DE 1 A 5 DENTRO DO GRID NO COMPORTAMENTO DO HOVER(QUANDO SOBREPOE A SETA DO MOUSE EM CIMA DO ELEMENTO)*/
+.grid-item1:hover,
+.grid-item2:hover,
+.grid-item3:hover,
+.grid-item4:hover,
+.grid-item5:hover
+{
+    background-color: #565190;/*FUNDO MAIS ESCURO QUANDO O ELEMENTO É SOBREPOSTO PELA SETA DO MOUSE*/
+    box-shadow: 1px -1px 15px#817DB5;/*DANDO UM BOXSHADOW PARA DEIXAR MAIS BONITO NÉ*/
+    transition: all 0.110s ease-in-out;/*FAZENDO COM QUE OS DOIS ATRIBUTOS ACIMA ACONTEÇA MAIS SUAVEMENTE*/
+    
+}
+/*DEFININDO O TAMANHO DA FONTE DA DESCRIÇÃO*/
+p
+{
+    font-size: 1.3em;
+}
+/*ESSE SELETOR ESTÁ ESTILIZANDO TODOS OS BOTÕES(button) DA PÁGINA QUE ESTÃO DENTRO DE UM LINK(a), NESSE CASO APENAS OS BOTÕES DOS ITENS*/
+a > button
+{
+    width:70px;/*LARGURA DO BOTÃO*/
+    height:30px;/*ALTURA DO BOTÃO*/
+    border: none;/*TIRANDO A BORDA DO BOTÃO*/
+    border-radius:15px;/*ARREDONDANDO AS QUINAS DO BOTÃO*/
+    background-color: #D7D7EA;/*COR DE FUNDO*/
+    cursor: pointer;/*ATRIBUDO QUE PERMITE QUE A SETA SE COMPORTE COMO SE FOSSE UM INPUT BUTTON*/
+    font-weight: bold;/*DEIXANDO A FONTE DO TEXTO MAIS ESCURA*/
+}
+/*GAMBIARRA PARA QUE O BOTÃO DO ITEM DE TERÇA DA TABELA DA TARDE FIQUE NA MESMA ALTURA QUE OS OUTROS BOTÕES*/
+.fix-botao
+{
+    margin-top:23.3px;/*ESPAÇAMENTO DE 23.3px APENAS DO TOPO*/
+}
